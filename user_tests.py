@@ -45,7 +45,7 @@ class TestUser(unittest.TestCase):
 
         found_user = User.find_user("Kevinov")
 
-        self.assertEqual(found_user.last_name, test_user.last_name)
+        self.assertEqual(found_user.second_name, test_user.second_name)
 
 if __name__ == '__main__':
     unittest.main()
