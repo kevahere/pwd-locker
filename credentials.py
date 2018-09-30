@@ -20,3 +20,4 @@ class Credentials:
         Credentials.credentials_list.remove()
 
     def generate_password(self):
+        """Generate """
