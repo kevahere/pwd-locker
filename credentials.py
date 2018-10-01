@@ -45,3 +45,5 @@ class Credentials:
     def copy_creds(cls, username):
         creds_to_copy = User.find_user(username)
         pyperclip.copy(creds_to_copy)
+
+"""End of class"""
