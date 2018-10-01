@@ -27,3 +27,11 @@ class Credentials:
         pwd = "".join(choice(allchar) for x in range(randint(min_char,max_char)))
         print ("Your new password is:" ,pwd)
 
+    @classmethod
+    def credentials_exist(cls, username):
+        '''do these credentials exist?'''
+        for credentials in cls.credentials_list:
+            if credentials.username == username:
+                return True
+        return False
+
