@@ -43,3 +43,7 @@ class TestCredentials(unittest.TestCase):
         '''can I copy credentials using pyperclip?'''
         self.new_credentials.save_credentials()
         Credentials.copy_creds("kevahere")
+        self.assertEqual(self.new_credentials.username, pyperclip.paste())
+
+if __name__ == '__main__':
+    unittest.main()
