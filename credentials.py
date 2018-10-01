@@ -40,3 +40,7 @@ class Credentials:
         for cred in cls.credentials_list:
             return cred
 
+    @classmethod
+    def copy_creds(cls, username):
+        creds_to_copy = Credentials.find_by_username(username)
+        pyperclip.copy(creds_to_copy)
