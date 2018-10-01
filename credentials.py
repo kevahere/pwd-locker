@@ -20,4 +20,10 @@ class Credentials:
         Credentials.credentials_list.remove()
 
     def generate_password(self):
-        """Generate """
+        """Generate password """
+        min_char = 6
+        max_char = 12
+        allchar = string.ascii_letters + string.punctuation + string.digits
+        pwd = "".join(choice(allchar) for x in range(randint(min_char,max_char)))
+        print ("Your new password is:" ,pwd)
+
