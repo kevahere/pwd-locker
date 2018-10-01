@@ -39,3 +39,7 @@ class TestCredentials(unittest.TestCase):
         ''' can we see the credentials?'''
         self.assertEqual(Credentials.display_credentials(), Credentials.credentials_list)
 
+    def test_copy_creds(self):
+        '''can I copy credentials using pyperclip?'''
+        self.new_credentials.save_credentials()
+        Credentials.copy_creds("kevahere")
