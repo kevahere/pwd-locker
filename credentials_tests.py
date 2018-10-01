@@ -15,3 +15,7 @@ class TestCredentials(unittest.TestCase):
 
     def tearDown(self):
         Credentials.credentials_list = []
+
+    def test_save_credentials(self):
+        self.new_credentials.save_credentials()
+        self.assertEqual(len(Credentials.credentials_list), 1)
