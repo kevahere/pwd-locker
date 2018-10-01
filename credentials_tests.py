@@ -12,3 +12,6 @@ class TestCredentials(unittest.TestCase):
         self.assertEqual(self.new_credentials.username, "kevahere")
         self.assertEqual(self.new_credentials.password, "3nd0fDay5")
         self.assertTrue(self.new_credentials.application, "Insta")
+
+    def tearDown(self):
+        Credentials.credentials_list = []
