@@ -1,6 +1,7 @@
 import pyperclip
-import random
+from random import *
 import string
+from user import User
 
 class Credentials:
     """Class for credentials"""
@@ -8,16 +9,16 @@ class Credentials:
     def __init__(self,application,username,password):
         """Instantiated credentials"""
         self.application = application
-        self.username
-        self.password
+        self.username = username
+        self.password = password
 
-    def save_credentials:
+    def save_credentials(self):
         """Adding to credentials list"""
         Credentials.credentials_list.append(self)
 
-    def delete_credentials:
+    def delete_credentials(self):
         """Remove credentials"""
-        Credentials.credentials_list.remove()
+        Credentials.credentials_list.remove(self)
 
     def generate_password(self):
         """Generate password """
@@ -42,5 +43,5 @@ class Credentials:
 
     @classmethod
     def copy_creds(cls, username):
-        creds_to_copy = Credentials.find_by_username(username)
+        creds_to_copy = User.find_user(username)
         pyperclip.copy(creds_to_copy)
