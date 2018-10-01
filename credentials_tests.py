@@ -19,3 +19,11 @@ class TestCredentials(unittest.TestCase):
     def test_save_credentials(self):
         self.new_credentials.save_credentials()
         self.assertEqual(len(Credentials.credentials_list), 1)
+
+    def test_delete_credentials(self):
+        ''' lets see if we can remove some credentials'''
+        self.new_credentials.save_credentials()
+        test_credentials = Credentials("netflix", "testahere", "passah3r3")
+        test_credentials.save_credentials()
+        self.new_credentials.delete_credentials()
+        self.assertEqual(len(Credentials.credentials_list), 1)
